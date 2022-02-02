@@ -8,6 +8,7 @@ public class SpringFirstApp {
 		//loading conatiner with defination given xml file
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	   
+		
 		Quotation que = (Quotation) context.getBean("QuotationService");
 	    String quoteForDay = que.getQuote();
 	    System.out.println(quoteForDay);
