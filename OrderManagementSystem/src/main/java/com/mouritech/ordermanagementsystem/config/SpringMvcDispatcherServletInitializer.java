@@ -1,4 +1,4 @@
-package com.mouritech.firstspringmvcapp.config;
+package com.mouritech.ordermanagementsystem.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -23,7 +23,7 @@ public class SpringMvcDispatcherServletInitializer
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
 		return new String[] {
-				"/greet/*"
+				"/oms/*"
 		};
 	}
 
