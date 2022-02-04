@@ -1,4 +1,4 @@
-package com.mouritech.customermanagement.controller;
+package com.mouritech.customermanagementsystem.controller;
 
 import java.util.List;
 

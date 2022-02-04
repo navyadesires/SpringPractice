@@ -8,14 +8,16 @@ public class SpringMvcDispatcherServletInitializer
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Class[] {
+				AppContext.class
+		};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		// TODO Auto-generated method stub
 		return new Class[] {
-				AppConfig.class
+				WebMvcConfig.class
 		};
 	}
 

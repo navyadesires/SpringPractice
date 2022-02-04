@@ -1,18 +1,19 @@
-package com.mouritech.customermanagement.config;
-
+package com.mouritech.ordermanagementsystem.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = 
-{"com.mouritech.custermanagementsystem"})
-public class AppConfig {
+{"com.mouritech.ordermanagementsystem"})
+public class WebMvcConfig  implements WebMvcConfigurer{
 	
 	@Bean
 	public InternalResourceViewResolver resolver() {
@@ -21,6 +22,11 @@ public class AppConfig {
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
 		return resolver;
+	}
+	
+	//@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		//re
 	}
 
 }

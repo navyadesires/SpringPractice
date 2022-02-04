@@ -1,5 +1,4 @@
-package com.mouritech.ordermanagementsystem.config;
-
+package com.mouritech.customermanagementsystem.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +9,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = 
-{"com.mouritech.ordermanagementsystem"})
+{"com.mouritech.customermanagementsystem"})
 public class AppConfig {
 	
 	@Bean

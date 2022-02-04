@@ -1,4 +1,4 @@
-package com.mouritech.customermanagement.controller;
+package com.mouritech.customermanagementsystem.controller;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,9 +19,9 @@ public class CustomerController {
 	
 	public List<Customer> customerList() {
 		List<Customer> customers = new ArrayList<Customer>();
-		customers.add(new Customer(100,LocalDateTime.of(2020, 11, 11, 11, 11).toString(),788.23f));
-		customers.add(new Customer(100,LocalDateTime.of(2020, 10, 11, 12, 10).toString(),678.23f));
-		customers.add(new Customer(100,LocalDateTime.of(2020, 8, 1, 12, 10).toString(),578.23f));
+		customers.add(new Customer(120,LocalDateTime.of(2020, 11, 11, 11, 11).toString(),508.23f));
+		customers.add(new Customer(120,LocalDateTime.of(2020, 10, 11, 12, 10).toString(),678.23f));
+		customers.add(new Customer(120,LocalDateTime.of(2020, 8, 1, 12, 10).toString(),578.23f));
 		return customers;
 		
 	}
