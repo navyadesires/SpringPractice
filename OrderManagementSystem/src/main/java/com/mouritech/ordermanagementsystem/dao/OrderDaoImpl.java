@@ -36,6 +36,18 @@ public class OrderDaoImpl implements OrderDao {
 		Session currHibSession = sessionFactory.getCurrentSession();
 		currHibSession.saveOrUpdate(theNewOrder);
 	}
+
+	public Order getOrder(int ordid) {
+		Session currHibSession1 = sessionFactory.getCurrentSession();
+		Order existingOrder = currHibSession1.get(Order.class, ordid);
+		return existingOrder;
+	}
+
+	public void deleteOrder(int ordid) {
+		Session currHibSession1 = sessionFactory.getCurrentSession();
+		Order existingOrder = currHibSession1.byId(Order.class).load(ordid);
+		currHibSession1.delete(existingOrder);
+	}
 	
 	
 

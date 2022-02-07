@@ -2,19 +2,22 @@ package com.mouritech.customermanagementsystem.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class SpringMvcDispatcherServletInitializer 
+			extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Class[] {
+				AppContext.class
+		};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		// TODO Auto-generated method stub
 		return new Class[] {
-				AppConfig.class
+				WebMvcConfig.class
 		};
 	}
 
@@ -25,4 +28,5 @@ public class SpringMvcDispatcherServletInitializer extends AbstractAnnotationCon
 				"/cus/*"
 		};
 	}
+
 }

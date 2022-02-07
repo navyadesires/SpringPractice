@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mouritech.ordermanagementsystem.model.Order;
 import com.mouritech.ordermanagementsystem.service.OrderService;
@@ -43,6 +44,19 @@ public class OrderController {
 	 @PostMapping("/saveOrder")
 	 public String saveOrder(@ModelAttribute("order") Order theNewOrder) {
 		 ordService.saveOrder(theNewOrder);
+		 return "redirect:/oms/order/listorder";
+	 }
+	 
+	 @GetMapping("/updateOrder")
+	 public String showFormForUpdateOrder(@RequestParam("orderId") int ordid,Model model ) {
+		 Order existingOrder = ordService.getOrder(ordid);
+		 model.addAttribute("order", existingOrder);
+		 return "orderform";
+	 }
+	 
+	 @GetMapping("/deleteOrder")
+	 public String deleteOrder(@RequestParam("orderId") int ordid) {
+		 ordService.deleteOrder(ordid);
 		 return "redirect:/oms/order/listorder";
 	 }
 }

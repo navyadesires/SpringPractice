@@ -18,14 +18,25 @@
 			<th>OrderId </th>
 			<th>OrderDate </th>
 			<th>OrderValue </th>
-
+			<th>Actions </th>
 		</tr>
 		<c:forEach items = "${Orders}" var="ord" >
-
+		
+		<!-- Construct update and delete links with order id -->
+		<c:url var="updateOrder" value="/oms/order/updateOrder">
+			<c:param name="orderId" value="${ord.orderId}"></c:param>
+		</c:url>
+		<c:url var="deleteOrder" value="/oms/order/deleteOrder">
+			<c:param name="orderId" value="${ord.orderId}"></c:param>
+		</c:url>
 		<tr>
 			<td><c:out value= "${ord.orderId}" /></td>
 			<td><c:out value= "${ord.orderDate}" /></td>
 			<td><c:out value= "${ord.orderValue}" /> </td>
+			<td>
+				<a href="${updateOrder}">Update</a>
+				<a href="${deleteOrder}">Delete</a>
+			</td>
 		</tr>
 		</c:forEach>
 </table>

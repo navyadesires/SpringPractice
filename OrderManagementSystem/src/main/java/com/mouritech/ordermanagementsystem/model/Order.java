@@ -14,7 +14,7 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "orderid")
-	private int orderId;
+	private Integer orderId;
 	
 	@Column(name = "orderdate")
 	private String orderDate;

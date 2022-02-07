@@ -6,7 +6,8 @@ import com.mouritech.customermanagementsystem.model.Customer;
 
 public class CustomerListContainer {
 
-	 private List<Customer> customers;
+	
+	private List<Customer> customers;
 
 	public List<Customer> getCustomers() {
 		return customers;
@@ -15,6 +16,4 @@ public class CustomerListContainer {
 	public void setCustomers(List<Customer> customers) {
 		this.customers = customers;
 	}
-
-	
 }

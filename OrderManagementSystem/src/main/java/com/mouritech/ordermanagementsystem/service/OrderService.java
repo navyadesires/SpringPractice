@@ -10,4 +10,8 @@ public interface OrderService {
 
 	void saveOrder(Order theNewOrder);
 
+	Order getOrder(int ordid);
+
+	void deleteOrder(int ordid);
+
 }

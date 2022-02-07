@@ -1,50 +1,54 @@
 package com.mouritech.customermanagementsystem.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
-	private int customerId;
-	private String customerDate;
-	private float customerValue;
-	
-	public Customer() {
-		// TODO Auto-generated constructor stub
+ 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "custId")
+	private int custId;
+	@Column(name = "custName")
+	private String custName;
+	@Column(name = "custAddress")
+	private String custAddress;
+	public int getCustId() {
+		return custId;
 	}
-
-	public Customer(int customerId, String customerDate, float customerValue) {
-		super();
-		this.customerId = customerId;
-		this.customerDate = customerDate;
-		this.customerValue = customerValue;
+	public void setCustId(int custId) {
+		this.custId = custId;
 	}
-
-	public int getCustomerId() {
-		return customerId;
+	public String getCustName() {
+		return custName;
 	}
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
+	public void setCustName(String custName) {
+		this.custName = custName;
 	}
-
-	public String getCustomerDate() {
-		return customerDate;
+	public String getCustAddress() {
+		return custAddress;
 	}
-
-	public void setCustomerDate(String customerDate) {
-		this.customerDate = customerDate;
+	public void setCustAddress(String custAddress) {
+		this.custAddress = custAddress;
 	}
-
-	public float getCustomerValue() {
-		return customerValue;
-	}
-
-	public void setCustomerValue(float customerValue) {
-		this.customerValue = customerValue;
-	}
-
 	@Override
 	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerDate=" + customerDate + ", customerValue="
-				+ customerValue + "]";
+		return "Customer [custId=" + custId + ", custName=" + custName + ", custAddress=" + custAddress + "]";
 	}
-
+	public Customer(int custId, String custName, String custAddress) {
+		super();
+		this.custId = custId;
+		this.custName = custName;
+		this.custAddress = custAddress;
+	}
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 }

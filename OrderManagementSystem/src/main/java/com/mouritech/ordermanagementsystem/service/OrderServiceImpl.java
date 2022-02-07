@@ -28,4 +28,16 @@ public class OrderServiceImpl implements OrderService{
 		 ordDao.saveOrder(theNewOrder);
 	}
 
+	@Transactional
+	public Order getOrder(int ordid) {
+		
+		return ordDao.getOrder(ordid);
+	}
+	
+	@Transactional
+	public void deleteOrder(int ordid) {
+		 ordDao.deleteOrder(ordid);
+		
+	}
+
 }
